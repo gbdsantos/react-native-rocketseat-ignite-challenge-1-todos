@@ -12,7 +12,7 @@ export function Home() {
     const taskWithSameTitle  = tasks.find(task => task.title === newTaskTitle);
 
     if (taskWithSameTitle) {
-      Alert.alert('Task já cadastrada', 'Você não pode adicionar uma tarefa que já existe');
+      Alert.alert('Tarefa já cadastrada', 'Você não pode adicionar uma tarefa que já existe');
     }
 
     const newTask = {
@@ -22,6 +22,14 @@ export function Home() {
     }
 
     setTasks(oldTasks => [...oldTasks, newTask]);
+  }
+
+
+  // TODO: Edit task
+  function handleEditTask(id: number) {
+    const findTask =tasks.find(task => task.id === id);
+
+
   }
 
   function handleToggleTaskDone(id: number) {
@@ -39,9 +47,23 @@ export function Home() {
   }
 
   function handleRemoveTask(id: number) {
-    const updatedTasks = tasks.filter(task => task.id != id);
+    Alert.alert('Remover item', 'Tem certeza que você deseja remover esse item', [
+      {
+        style: 'cancel',
+        text: 'Não'
+      },
+      {
+        style: 'destructive',
+        text: 'Sim',
+        onPress: () => {
+          const updatedTasks = tasks.filter(task => task.id != id);
 
-    setTasks(updatedTasks);
+          setTasks(updatedTasks);
+        }
+      }
+    ]);
+
+
   }
 
   return (
@@ -52,6 +74,7 @@ export function Home() {
 
       <TasksList 
         tasks={tasks} 
+        editTask={handleEditTask}
         toggleTaskDone={handleToggleTaskDone}
         removeTask={handleRemoveTask} 
       />
