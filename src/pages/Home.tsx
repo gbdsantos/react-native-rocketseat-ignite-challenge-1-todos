@@ -5,6 +5,11 @@ import { Header } from '../components/Header';
 import { Task, TasksList } from '../components/TasksList';
 import { TodoInput } from '../components/TodoInput';
 
+export type EditTaskArgs = {
+  taskId: number;
+  taskNewTitle: string;
+}
+
 export function Home() {
   const [tasks, setTasks] = useState<Task[]>([]);
 
@@ -26,10 +31,18 @@ export function Home() {
 
 
   // TODO: Edit task
-  function handleEditTask(id: number) {
-    const findTask =tasks.find(task => task.id === id);
+  function handleEditTask({ taskId, taskNewTitle}: EditTaskArgs) {
+    const updatedTasks = tasks.map(task => ({ ...task }));
 
+    const taskToBeUpdated = updatedTasks.find(task => task.id === taskId);
 
+    if (!taskToBeUpdated) {
+      return;
+    }
+
+    taskToBeUpdated.title = taskNewTitle;
+
+    setTasks(updatedTasks);
   }
 
   function handleToggleTaskDone(id: number) {
@@ -62,8 +75,6 @@ export function Home() {
         }
       }
     ]);
-
-
   }
 
   return (
