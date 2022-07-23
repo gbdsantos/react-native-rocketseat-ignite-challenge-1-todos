@@ -58,8 +58,8 @@ export function TaskItem({
   }, [isEditing])
 
   return (
-    <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-      <View>
+    <View style={styles.container}>
+      <View style={styles.infoContainer}>
         <TouchableOpacity
           activeOpacity={0.7}
           style={styles.taskButton}
@@ -88,7 +88,7 @@ export function TaskItem({
         </TouchableOpacity>
       </View>
 
-      <View>
+      <View style={styles.iconsContainer}>
         { isEditing ? (
           <TouchableOpacity
             onPress={handleCancelEditing}
@@ -97,13 +97,13 @@ export function TaskItem({
           </TouchableOpacity>
         ) : (
           <TouchableOpacity
-            style={{ paddingHorizontal: 24 }}
             onPress={handleStartEditing}
           >
             <Image source={editIcon} />
           </TouchableOpacity>          
         )}
-        <View />
+
+        <View style={styles.iconsDivider} />
 
         <TouchableOpacity
             disabled={isEditing}
@@ -117,10 +117,18 @@ export function TaskItem({
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between'
+  },
+  infoContainer: {
+    flex: 1
+  },
   taskButton: {
     flex: 1,
     paddingHorizontal: 24,
-    paddingVertical: 15,
     marginBottom: 4,
     borderRadius: 4,
     flexDirection: 'row',
@@ -153,5 +161,17 @@ const styles = StyleSheet.create({
     color: '#1DB863',
     textDecorationLine: 'line-through',
     fontFamily: 'Inter-Medium'
+  },
+  iconsContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingLeft: 12,
+    paddingRight: 24,
+  },
+  iconsDivider: {
+    backgroundColor: 'rgba(196, 196, 196, 0.24)',
+    marginHorizontal: 12,
+    height: 24,
+    width: 1,
   }
 })
