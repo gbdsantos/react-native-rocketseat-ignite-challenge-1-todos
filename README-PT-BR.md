@@ -1,11 +1,7 @@
 <h1 align="center">
     <br>
-    :fire: Ignite - Desafio 1
+    :fire: Ignite - To.do App 
 </h1>
-
-<h4 align="center">
-  App de lista de tarefas
-</h4>
 
 <p align="center">
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/gbdsantos/react-native-rocketseat-ignite-challenge-1-todos.svg">
@@ -21,6 +17,11 @@
   <img alt="GitHub" src="https://img.shields.io/github/license/gbdsantos/react-native-rocketseat-ignite-challenge-1-todos.svg">
 </p>
 
+<h4 align="center">
+  <img src="./assets/todo-app-demo.gif">
+  Um aplicativo simples de lista de tarefas
+</h4>
+
 <div align="center">
   <h4 align="center">Leia nos idiomas</h4>
   <a href="https://github.com/gbdsantos/react-native-rocketseat-ignite-challenge-1-todos">:us:
@@ -28,7 +29,13 @@
 </div>
 </p>
 
-## Iniciando
+## :bulb: About 
+
+Desafio 01/02 do bootcamp **Ignite 2021** da trilha de **React Native**.
+
+<br />
+
+## :gear: Iniciando
 
 ```Bash
 # 1. Instalar dependências

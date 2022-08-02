@@ -1,11 +1,7 @@
 <h1 align="center">
     <br>
-    :fire: Ignite - Challenge 1
+    :fire: Ignite - To.do App 
 </h1>
-
-<h4 align="center">
-  App To-do list
-</h4>
 
 <p align="center">
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/gbdsantos/react-native-rocketseat-ignite-challenge-1-todos.svg">
@@ -21,6 +17,11 @@
   <img alt="GitHub" src="https://img.shields.io/github/license/gbdsantos/react-native-rocketseat-ignite-challenge-1-todos.svg">
 </p>
 
+<h4 align="center">
+  <img src="./assets/todo-app-demo.gif">
+  A simple To-do list app
+</h4>
+
 <div align="center">
   <h4 align="center">Read on Languages</h4>
   <a href="https://github.com/gbdsantos/react-native-rocketseat-ignite-challenge-1-todos/blob/master/README-PT-BR.md">:brazil:
@@ -28,7 +29,13 @@
 </div>
 </p>
 
-## Getting Start
+## :bulb: About 
+
+**Ignite 2021** bootcamp challenge code 01/02 from **React Native** trail.
+
+<br />
+
+## :gear: Getting Start
 
 ```Bash
 # 1. Install dependencies
